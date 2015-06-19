@@ -4,9 +4,7 @@ import urllib2
 from app import app
 
 @app.route('/')
-@app.route('/index')
 def index():
-	user = {'nickname':'Rahul'}
 	i=1
 	count =1
 	items = []
@@ -35,12 +33,12 @@ def index():
 				bodys.append(rumour.find('p').text)
 				for sources in rumour.find_all('span',{'class':'column'}):
   					for source in sources:
-  						if m %2 == 0:
+  						if m % 2 == 0:
   							writers.append(source)
   							m += 1
   						else:
   							dates.append(source)
-  							m +=1
+  							m += 1
 
   	
 	return render_template('index.html',allitems=zip(items,heads,bodys,writers,dates))
