@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Goal's Transfer Talks</title>
+</head>
+<body>
+	<h2>Transfer Talks</h3>
+		{% for item,head,body,writer,date in allitems %}
+		<h3>{{ item }}. {{ head }}</h3>
+		<p>{{ body }}</p>
+		<footer>
+		<p>{{ writer }}</p>
+		<p>{{ date }}</p>
+		</footer><br>
+		{% endfor %}
+</body>
+</html>
